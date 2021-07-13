@@ -1,0 +1,139 @@
+    /*
+    Flaticon icon font: Flaticon
+    Creation date: 04/05/2017 10:46
+    */
+
+    @font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+    .fi:before{
+        display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+    }
+
+    .flaticon-001-hand:before { content: "\f100"; }
+.flaticon-002-calendar:before { content: "\f101"; }
+.flaticon-003-coins:before { content: "\f102"; }
+.flaticon-004-hourglass:before { content: "\f103"; }
+.flaticon-005-binoculars:before { content: "\f104"; }
+.flaticon-006-idea-1:before { content: "\f105"; }
+.flaticon-007-chat:before { content: "\f106"; }
+.flaticon-008-medal:before { content: "\f107"; }
+.flaticon-009-coffee:before { content: "\f108"; }
+.flaticon-010-team:before { content: "\f109"; }
+.flaticon-011-money:before { content: "\f10a"; }
+.flaticon-012-research:before { content: "\f10b"; }
+.flaticon-013-mobile-phone:before { content: "\f10c"; }
+.flaticon-014-diagram:before { content: "\f10d"; }
+.flaticon-015-learning:before { content: "\f10e"; }
+.flaticon-016-planning:before { content: "\f10f"; }
+.flaticon-017-lifebuoy:before { content: "\f110"; }
+.flaticon-018-compass:before { content: "\f111"; }
+.flaticon-019-seo:before { content: "\f112"; }
+.flaticon-020-startup:before { content: "\f113"; }
+.flaticon-021-browser-1:before { content: "\f114"; }
+.flaticon-022-innovation:before { content: "\f115"; }
+.flaticon-023-world-wide:before { content: "\f116"; }
+.flaticon-024-like:before { content: "\f117"; }
+.flaticon-025-browser:before { content: "\f118"; }
+.flaticon-026-development:before { content: "\f119"; }
+.flaticon-027-hot-air-balloon:before { content: "\f11a"; }
+.flaticon-028-wallet:before { content: "\f11b"; }
+.flaticon-029-puzzle:before { content: "\f11c"; }
+.flaticon-030-paper-plane:before { content: "\f11d"; }
+.flaticon-031-statistics:before { content: "\f11e"; }
+.flaticon-032-report:before { content: "\f11f"; }
+.flaticon-033-growth-1:before { content: "\f120"; }
+.flaticon-034-brain:before { content: "\f121"; }
+.flaticon-035-chart:before { content: "\f122"; }
+.flaticon-036-idea:before { content: "\f123"; }
+.flaticon-037-teamwork:before { content: "\f124"; }
+.flaticon-038-worldwide:before { content: "\f125"; }
+.flaticon-039-networking:before { content: "\f126"; }
+.flaticon-040-vision:before { content: "\f127"; }
+.flaticon-041-question:before { content: "\f128"; }
+.flaticon-042-trophy:before { content: "\f129"; }
+.flaticon-043-megaphone:before { content: "\f12a"; }
+.flaticon-044-analytics:before { content: "\f12b"; }
+.flaticon-045-target:before { content: "\f12c"; }
+.flaticon-046-strategy:before { content: "\f12d"; }
+.flaticon-047-goal:before { content: "\f12e"; }
+.flaticon-048-rocket:before { content: "\f12f"; }
+.flaticon-049-growth:before { content: "\f130"; }
+.flaticon-050-cooperate:before { content: "\f131"; }
+    
+    $font-Flaticon-001-hand: "\f100";
+    $font-Flaticon-002-calendar: "\f101";
+    $font-Flaticon-003-coins: "\f102";
+    $font-Flaticon-004-hourglass: "\f103";
+    $font-Flaticon-005-binoculars: "\f104";
+    $font-Flaticon-006-idea-1: "\f105";
+    $font-Flaticon-007-chat: "\f106";
+    $font-Flaticon-008-medal: "\f107";
+    $font-Flaticon-009-coffee: "\f108";
+    $font-Flaticon-010-team: "\f109";
+    $font-Flaticon-011-money: "\f10a";
+    $font-Flaticon-012-research: "\f10b";
+    $font-Flaticon-013-mobile-phone: "\f10c";
+    $font-Flaticon-014-diagram: "\f10d";
+    $font-Flaticon-015-learning: "\f10e";
+    $font-Flaticon-016-planning: "\f10f";
+    $font-Flaticon-017-lifebuoy: "\f110";
+    $font-Flaticon-018-compass: "\f111";
+    $font-Flaticon-019-seo: "\f112";
+    $font-Flaticon-020-startup: "\f113";
+    $font-Flaticon-021-browser-1: "\f114";
+    $font-Flaticon-022-innovation: "\f115";
+    $font-Flaticon-023-world-wide: "\f116";
+    $font-Flaticon-024-like: "\f117";
+    $font-Flaticon-025-browser: "\f118";
+    $font-Flaticon-026-development: "\f119";
+    $font-Flaticon-027-hot-air-balloon: "\f11a";
+    $font-Flaticon-028-wallet: "\f11b";
+    $font-Flaticon-029-puzzle: "\f11c";
+    $font-Flaticon-030-paper-plane: "\f11d";
+    $font-Flaticon-031-statistics: "\f11e";
+    $font-Flaticon-032-report: "\f11f";
+    $font-Flaticon-033-growth-1: "\f120";
+    $font-Flaticon-034-brain: "\f121";
+    $font-Flaticon-035-chart: "\f122";
+    $font-Flaticon-036-idea: "\f123";
+    $font-Flaticon-037-teamwork: "\f124";
+    $font-Flaticon-038-worldwide: "\f125";
+    $font-Flaticon-039-networking: "\f126";
+    $font-Flaticon-040-vision: "\f127";
+    $font-Flaticon-041-question: "\f128";
+    $font-Flaticon-042-trophy: "\f129";
+    $font-Flaticon-043-megaphone: "\f12a";
+    $font-Flaticon-044-analytics: "\f12b";
+    $font-Flaticon-045-target: "\f12c";
+    $font-Flaticon-046-strategy: "\f12d";
+    $font-Flaticon-047-goal: "\f12e";
+    $font-Flaticon-048-rocket: "\f12f";
+    $font-Flaticon-049-growth: "\f130";
+    $font-Flaticon-050-cooperate: "\f131";
