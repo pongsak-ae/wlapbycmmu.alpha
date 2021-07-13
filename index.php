@@ -1,39 +1,17 @@
  <?php
-
-
-    $get_banner_cover = getdata("https://wlap.siamindy.in.th/en/api/banner_v2.php");
-    $get_couser_active = getdata("https://wlap.siamindy.in.th/en/api/course.php");
-    $get_speaker = getdata("https://wlap.siamindy.in.th/en/api/course_speaker.php");
-    $get_review = getdata("https://wlap.siamindy.in.th/en/api/previous_comment.php");
-    $get_contact = getdata("https://wlap.siamindy.in.th/en/api/contact.php");
-
-    function getdata($url){
-        $curl = curl_init($url);
-        curl_setopt($curl, CURLOPT_FAILONERROR, true);
-        curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
-        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);  
-        $result = curl_exec($curl); 
-        curl_close($curl);   
-        return json_decode($result);
-    }
-    
-    function DateThai($strDate){
-        $strYear = date("Y",strtotime($strDate))+543;
-        $strMonth= date("n",strtotime($strDate));
-        $strDay= date("j",strtotime($strDate));
-        $strMonthCut = Array('','มกราคม','กุมภาพันธ์','มีนาคม','เมษายน','พฤษภาคม','มิถุนายน','กรกฎาคม','สิงหาคม','กันยายน','ตุลาคม','พฤศจิกายน','ธันวาคม');
-        $strMonthThai=$strMonthCut[$strMonth];
-        return "$strDay $strMonthThai $strYear";
-    }
+    require 'baseUrl.php';
+    $get_banner_cover = getdata("https://admin.wlapbycmmu.com/en/api/banner.php");
+    $get_couser_active = getdata("https://admin.wlapbycmmu.com/en/api/course.php");
+    $get_speaker = getdata("https://admin.wlapbycmmu.com/en/api/course_speaker.php");
+    $get_review = getdata("https://admin.wlapbycmmu.com/en/api/previous_comment.php");
+    $get_contact = getdata("https://admin.wlapbycmmu.com/en/api/contact.php");
 
 ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>W-LAP</title>
+        <title>W-LAP #<?=$get_couser_active[0]->course_no?></title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="Construction Company Website Template" name="keywords">
         <meta content="Construction Company Website Template" name="description">
@@ -48,110 +26,26 @@
         <!-- CSS Libraries -->
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-        <link href="lib/flaticon/font/flaticon.css" rel="stylesheet"> 
-        <link href="lib/animate/animate.min.css" rel="stylesheet">
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-        <link href="lib/slick/slick.css" rel="stylesheet">
-        <link href="lib/slick/slick-theme.css" rel="stylesheet">
+        <link href="<?=WEB_META_BASE_URL?>lib/flaticon/font/flaticon.css" rel="stylesheet"> 
+        <link href="<?=WEB_META_BASE_URL?>lib/animate/animate.min.css" rel="stylesheet">
+        <link href="<?=WEB_META_BASE_URL?>lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="<?=WEB_META_BASE_URL?>lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+        <link href="<?=WEB_META_BASE_URL?>lib/slick/slick.css" rel="stylesheet">
+        <link href="<?=WEB_META_BASE_URL?>lib/slick/slick-theme.css" rel="stylesheet">
 
         <!-- font -->
         <link rel="stylesheet" href="font/flaticon.css" type="text/css">
 
         <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
+        <link href="<?=WEB_META_BASE_URL?>css/style.css" rel="stylesheet">
+
     </head>
 
     <body>
         <div class="wrapper">
-            <!-- Top Bar Start -->
-            <div class="top-bar">
-                <div class="container-fluid">
-                    <div class="row align-items-center">
-                        <div class="col-lg-4 col-md-12">
-                            <div class="logo">
-                                <a href="index.html">
-                                    <img src="./img/W-Lap-Logo.png">
-                                    <!-- <img src="img/logo.jpg" alt="Logo"> -->
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-8 col-md-7 d-none d-lg-block">
-                            <div class="row">
-                                <div class="col-4">
-                                    <div class="top-bar-item">
-                                        <div class="top-bar-text">
-                                            <img src="./img/mahidol2.png">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="top-bar-item text-center">
-                                        <div class="top-bar-text">
-                                            <img src="./img/aacsb1white.png" style="width: 60%;margin-top: 5px;">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="top-bar-item text-center">
-                                        <div class="top-bar-text">
-                                            <img src="./img/cmmu.png" style="width: 40%;margin-top: 10px;">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Top Bar End -->
-
-            <!-- Nav Bar Start -->
-            <div class="nav-bar">
-                <div class="container-fluid">
-                    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-                        <div class="d-sm-none">
-                            <div class="row">
-                                <div class="col-5">
-                                    <img src="./img/mahidol2.png" style="width: 130%;">
-                                </div>
-                                <div class="col-4 text-right">
-                                    <img src="./img/aacsb1white.png" style="width: 70%;margin-top: 5px;">
-                                </div>
-                                <div class="col-3 text-center">
-                                    <img src="./img/cmmu.png" style="width: 80%;margin-top: 5px;">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="d-sm-none w-100">
-                            <div class="row mt-3">
-                                <div class="col-4">
-                                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                                        <span class="navbar-toggler-icon"></span>
-                                    </button>
-                                </div>
-                                <div class="col-8">
-                                    <a class="btn d-block th regis-btn" href="#" style="float: right;">สมัคร W-ALP #<?=$get_couser_active[0]->course_no?></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                            <div class="navbar-nav mr-auto">
-                                <a href="#" class="nav-item nav-link active">Home</a>
-                                <a href="#" class="nav-item nav-link">COURSE</a>
-                                <a href="#" class="nav-item nav-link">TIMETABLE</a>
-                                <a href="#" class="nav-item nav-link">REGISTER</a>
-                                <a href="#" class="nav-item nav-link">CONTACT</a>
-                                <a href="./pdf.pdf" target="blank" class="nav-item nav-link">E-Brochure</a>
-                            </div>
-                            <div class="ml-auto">
-                                <a class="btn th regis-btn" href="#">สมัคร W-ALP #<?=$get_couser_active[0]->course_no?></a>
-                            </div>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-            <!-- Nav Bar End -->
+            <!-- HEDER -->
+            <?php require 'header.php';?>
+            <!-- HEDER -->
 
             <!-- Carousel Start -->
             <div id="carousel" class="carousel slide" data-ride="carousel">
@@ -164,10 +58,11 @@
                     <?php
                         foreach ($get_banner_cover as $kcover => $vcover) {
                             $coverActive = ($kcover == 0) ? 'active' : '';
-                            $banner_cover = str_replace('https://wlap.siamindy.in.th', 'http://admin.wlapbycmmu.alpha', $vcover->banner_image)
+                            // $banner_cover = str_replace('https://wlap.siamindy.in.th', 'http://admin.wlapbycmmu.alpha', $vcover->banner_image);
+                            $banner_cover = $vcover->banner_image;
                     ?>
                         <div class="carousel-item <?=$coverActive?>">
-                            <img src="<?=$banner_cover?>" alt="Carousel Image">
+                            <img src="<?=$banner_cover?>">
                             <div class="carousel-caption slide-text">
                                 <p class="animated fadeInRight mt-text-slide">Fast tracking you to become a Professional Leader</p>
                                 <h1 class="animated fadeInLeft" style="text-shadow: 0 0 10px #fff;">W-LAP</h1>
@@ -198,7 +93,7 @@
                             <div class="section-header">
                                 <span>
                                     <h3 class="th text-aura">หลักสูตรพัฒนาศักยภาพ</h3>
-                                    <h2 class="th text-aura">&nbspผู้บริหารมืออาชีพ รุ่นที่ 2</h2>
+                                    <h2 class="th text-aura">&nbspผู้บริหารมืออาชีพ รุ่นที่ <?=$get_couser_active[0]->course_no?></h2>
                                 </span>
                             </div>
                             <div class="about-text th">
@@ -303,7 +198,8 @@
                     <div class="row">
                         <?php
                             foreach ($get_speaker as $kspeaker => $vspeaker) {
-                                $speaker_image = str_replace('https://wlap.siamindy.in.th', 'http://admin.wlapbycmmu.alpha', $vspeaker->speaker_image)
+                                // $speaker_image = str_replace('https://wlap.siamindy.in.th', 'http://admin.wlapbycmmu.alpha', $vspeaker->speaker_image);
+                                $speaker_image = $vspeaker->speaker_image;
                         ?>
                                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                                     <div class="team-item">
@@ -467,7 +363,7 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                            <img class="w-100" src="./img/2.png">
+                            <img class="w-100" src="<?=WEB_META_BASE_URL?>img/2.png">
                         </div>
                         <div class="col-lg-6 wow fadeInUp m-top5" data-wow-delay="0.2s">
                             <p class="th text-white font-20 text-aura">เรียนท่านผู้บริหารที่เคารพทุกท่าน</p>
@@ -723,25 +619,25 @@
                         <div class="col-lg-8 wow fadeInUp" data-wow-delay="0.1s">
                             <div class="row">
                                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                                    <img class="w-100" src="./img/dan1.jpg">
+                                    <img class="w-100" src="<?=WEB_META_BASE_URL?>img/dan1.jpg">
                                 </div>
                                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                                     <div class="row">
                                         <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.1s">
-                                            <img class="w-100" src="./img/dan4.png">
+                                            <img class="w-100" src="<?=WEB_META_BASE_URL?>img/dan4.png">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.1s">
-                                            <img class="w-100 img-h150" src="./img/dan2.jpg">
+                                            <img class="w-100 img-h150" src="<?=WEB_META_BASE_URL?>img/dan2.jpg">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-6 wow fadeInUp pr-0m" data-wow-delay="0.1s">
-                                            <img class="w-100 img-h50" src="./img/dan3.png">
+                                            <img class="w-100 img-h50" src="<?=WEB_META_BASE_URL?>img/dan3.png">
                                         </div>
                                         <div class="col-lg-6 wow fadeInUp pl-0m" data-wow-delay="0.1s">
-                                            <img class="w-100 img-h50" src="./img/dan6.jpg">
+                                            <img class="w-100 img-h50" src="<?=WEB_META_BASE_URL?>img/dan6.jpg">
                                         </div>
                                     </div>
                                 </div>
@@ -766,25 +662,25 @@
                         <div class="col-lg-8 wow fadeInUp" data-wow-delay="0.1s">
                             <div class="row">
                                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                                    <img class="w-100 h-100" src="./img/hotel1.jpg">
+                                    <img class="w-100 h-100" src="<?=WEB_META_BASE_URL?>img/hotel1.jpg">
                                 </div>
                                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                                     <div class="row">
                                         <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.1s">
-                                            <img class="w-100" src="./img/hotel2.jpg">
+                                            <img class="w-100" src="<?=WEB_META_BASE_URL?>img/hotel2.jpg">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.1s">
-                                            <img class="w-100" src="./img/hotel3.jpg">
+                                            <img class="w-100" src="<?=WEB_META_BASE_URL?>img/hotel3.jpg">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-6 wow fadeInUp pr-0m" data-wow-delay="0.1s">
-                                            <img class="w-100" src="./img/hotel4.jpg">
+                                            <img class="w-100" src="<?=WEB_META_BASE_URL?>img/hotel4.jpg">
                                         </div>
                                         <div class="col-lg-6 wow fadeInUp pl-0m" data-wow-delay="0.1s">
-                                            <img class="w-100" src="./img/hotel5.jpg">
+                                            <img class="w-100" src="<?=WEB_META_BASE_URL?>img/hotel5.jpg">
                                         </div>
                                     </div>
                                 </div>
@@ -853,31 +749,7 @@
             </div>
 
             <!-- Footer Start -->
-            <div class="footer wow fadeIn" data-wow-delay="0.3s">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-8">
-                            <div class="footer-contact">
-                                <h2>Office Contact</h2>
-                                <p><i class="fa fa-map-marker-alt"></i><?=$get_contact[0]->address?></p>
-                                <p><i class="fa fa-phone-alt"></i><?=$get_contact[0]->telephone?></p>
-                                <p><i class="fa fa-envelope"></i><?=$get_contact[0]->email?></p>
-                                <p><i class="fab fa-line"></i><?=$get_contact[0]->line?></p>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <h2 class="th">ลงทะเบียน</h2>
-                            <a class="regis-btn animated fadeInUp th" href="#">สมัคร W-ALP #<?=$get_couser_active[0]->course_no?></a>
-                                <div class="footer-social my-5">
-                                    <a  target="_blank" href="https://line.me/ti/p/<?=$get_contact[0]->line?>"><i class="fab fa-line"></i></a>
-                                    <a  target="_blank" href="<?=$get_contact[0]->facebook?>"><i class="fab fa-facebook-f"></i></a>
-                                    <a  target="_blank" href="mailto:<?=$get_contact[0]->email?>"><i class="fa fa-envelope"></i></a>
-                                    <a  target="_blank" href="tel:<?=$get_contact[0]->telephone?>"><i class="fa fa-phone-alt"></i></a>
-                                </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php require 'footer.php';?>
             <!-- Footer End -->
 
             <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
@@ -910,7 +782,7 @@
                         <div class="modal-body">
                             <div class="row">
                                 <!-- <div class="col-md-4">
-                                    <img id="customer_image" src="../img/no-image.jpg" class="card-img-top mb-3" style="height: 252px;object-fit: cover;">
+                                    <img id="customer_image" src="<?=WEB_META_BASE_URL?>img/no-image.jpg" class="card-img-top mb-3" style="height: 252px;object-fit: cover;">
                                     <input type="file" id="customer_image" name="customer_image" accept="image/*"/>
                                 </div> -->
                                 <div class="col-md-3">
@@ -979,7 +851,7 @@
                                         <input type="text" id="coordinator_name" name="coordinator_name" class="form-control" placeholder="Enter coordinator">
                                     </div>
                                     <div class="form-group mb-3 ">
-                                        <!-- <img id="customer_image" src="../img/no-image.jpg" class="card-img-top mb-3" style="height: 252px;object-fit: cover;"> -->
+                                        <!-- <img id="customer_image" src="<?=WEB_META_BASE_URL?>img/no-image.jpg" class="card-img-top mb-3" style="height: 252px;object-fit: cover;"> -->
                                         <label class="form-label">Customer Image</label>
                                         <input type="file" id="customer_image" name="customer_image" accept="image/*"/>
                                     </div>
@@ -1033,20 +905,22 @@
                 </div>
             </div>
         </div>
+
         <!-- JavaScript Libraries -->
-        <script src="js/jquery-3.6.0.min.js"></script>
+        <script src="<?=WEB_META_BASE_URL?>js/jquery-3.6.0.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
-        <script src="lib/easing/easing.min.js"></script>
-        <script src="lib/wow/wow.min.js"></script>
-        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-        <script src="lib/isotope/isotope.pkgd.min.js"></script>
-        <script src="lib/lightbox/js/lightbox.min.js"></script>
-        <script src="lib/waypoints/waypoints.min.js"></script>
-        <script src="lib/counterup/counterup.min.js"></script>
-        <script src="lib/slick/slick.min.js"></script>
+        <script src="<?=WEB_META_BASE_URL?>lib/easing/easing.min.js"></script>
+        <script src="<?=WEB_META_BASE_URL?>lib/wow/wow.min.js"></script>
+        <script src="<?=WEB_META_BASE_URL?>lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="<?=WEB_META_BASE_URL?>lib/isotope/isotope.pkgd.min.js"></script>
+        <script src="<?=WEB_META_BASE_URL?>lib/lightbox/js/lightbox.min.js"></script>
+        <script src="<?=WEB_META_BASE_URL?>lib/waypoints/waypoints.min.js"></script>
+        <script src="<?=WEB_META_BASE_URL?>lib/counterup/counterup.min.js"></script>
+        <script src="<?=WEB_META_BASE_URL?>lib/slick/slick.min.js"></script>
         <!-- Template Javascript -->
-        <script src="js/main.js"></script>
-        <script src="js/app.js"></script>
+        <script src="<?=WEB_META_BASE_URL?>js/main.js"></script>
+        <script src="<?=WEB_META_BASE_URL?>js/app.js"></script>
+
     </body>
 </html>

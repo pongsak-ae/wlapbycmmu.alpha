@@ -8,6 +8,11 @@
     background-position: 100% 100%;
 }
 
+.bg-detail{
+    background-image: url("../img/wlap-bg-1.jpg");
+    background-position: 100% 100%;
+}
+
 .slide-text{
     background: linear-gradient(180deg, rgba(157, 155, 155, 0) 80%, rgb(0, 0, 0) 100%);
 }
@@ -82,7 +87,7 @@
 }
 
 .regis-btn{
-    padding: 15px 35px;
+    padding: 8px 20px;
     font-size: 18px;
     font-weight: 500;
     letter-spacing: 1px;
@@ -315,10 +320,10 @@ a:focus {
 .nav-bar {
     position: relative;
     /*background: #031D40;*/
-    transition: .3s;
-    background-image: url(../img/wlap-bg-nav-2.jpg);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
+    /*transition: .3s;*/
+    /*background-image: url(../img/wlap-bg-nav-2.jpg);*/
+    /*background-repeat: no-repeat;*/
+    /*background-size: 100% 100%;*/
 }
 
 .nav-bar .container-fluid {
@@ -383,9 +388,9 @@ a:focus {
 }
 
 @media (min-width: 992px) {
-    .nav-bar {
+/*    .nav-bar {
         padding: 0 75px;
-    }
+    }*/
     
     .nav-bar.nav-sticky {
         padding: 0;
