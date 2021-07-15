@@ -4,7 +4,6 @@
     $get_couser_active = getdata("https://admin.wlapbycmmu.com/en/api/course.php");
     $get_speaker = getdata("https://admin.wlapbycmmu.com/en/api/course_speaker.php");
     $get_review = getdata("https://admin.wlapbycmmu.com/en/api/previous_comment.php");
-    $get_contact = getdata("https://admin.wlapbycmmu.com/en/api/contact.php");
 
 ?>
 <!DOCTYPE html>

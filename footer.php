@@ -1,3 +1,6 @@
+<?php
+    $get_contact = getdata("https://admin.wlapbycmmu.com/en/api/contact.php");
+?>
 <!-- Footer Start -->
 <div class="footer wow fadeIn" data-wow-delay="0.3s">
     <div class="container">

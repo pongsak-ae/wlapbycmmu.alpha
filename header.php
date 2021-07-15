@@ -72,9 +72,9 @@
             <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                 <div class="navbar-nav mr-auto">
                     <a href="<?=WEB_META_BASE_URL?>" class="nav-item nav-link">Home</a>
-                    <a href="<?=WEB_META_BASE_URL?>course-detail/" class="nav-item nav-link">COURSE</a>
+                    <a href="<?=WEB_META_BASE_URL?>course-detail/" class="nav-item nav-link">COURSE DETAIL</a>
                     <a href="#" class="nav-item nav-link">TIMETABLE</a>
-                    <a href="#" class="nav-item nav-link">REGISTER</a>
+                    <!-- <a href="#" class="nav-item nav-link">REGISTER</a> -->
                     <a href="#" class="nav-item nav-link">CONTACT</a>
                     <a href="<?=WEB_META_BASE_URL?>pdf.pdf" target="blank" class="nav-item nav-link">E-Brochure</a>
                 </div>
