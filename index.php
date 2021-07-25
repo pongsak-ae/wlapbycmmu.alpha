@@ -31,6 +31,7 @@
         <link href="<?=WEB_META_BASE_URL?>lib/lightbox/css/lightbox.min.css" rel="stylesheet">
         <link href="<?=WEB_META_BASE_URL?>lib/slick/slick.css" rel="stylesheet">
         <link href="<?=WEB_META_BASE_URL?>lib/slick/slick-theme.css" rel="stylesheet">
+        <link href="<?=WEB_META_BASE_URL?>lib/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
 
         <!-- font -->
         <link rel="stylesheet" href="font/flaticon.css" type="text/css">
@@ -769,7 +770,7 @@
             </div>
         </div>
         <div class="modal modal-blur fade" id="modal_regis" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+            <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <form id="frm_register">
                         <div class="modal-header">
@@ -779,116 +780,106 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <div class="row">
-                                <!-- <div class="col-md-4">
-                                    <img id="customer_image" src="<?=WEB_META_BASE_URL?>img/no-image.jpg" class="card-img-top mb-3" style="height: 252px;object-fit: cover;">
-                                    <input type="file" id="customer_image" name="customer_image" accept="image/*"/>
-                                </div> -->
-                                <div class="col-md-3">
-                                    <div class="form-group mb-3 ">
-                                        <label class="form-label">Full Name</label>
-                                        <input type="text" id="customer_fullname" name="customer_fullname" class="form-control" placeholder="Enter fullname">
-                                    </div>
-                                    <div class="form-group mb-3 ">
-                                        <label class="form-label">ID Card</label>
-                                        <input type="text" id="customer_idcard" name="customer_idcard" class="form-control" placeholder="Enter ID Card">
-                                    </div>
-                                    <div class="form-group mb-3 ">
-                                        <label class="form-label">Facebook</label>
-                                        <input type="text" id="customer_facebook" name="customer_facebook" class="form-control" placeholder="Enter facebook">
-                                    </div>
-                                    <div class="form-group mb-3 ">
-                                        <label class="form-label">Course Name</label>
-                                        <input type="text" id="course_name_studied" name="course_name_studied" class="form-control" placeholder="Enter course name">
-                                    </div>
-                                    <div class="form-group mb-3 ">
-                                        <label class="form-label">Coordinator Adviser</label>
-                                        <input type="text" id="coordinator_adviser" name="coordinator_adviser" class="form-control" placeholder="Enter coordinator adviser">
-                                    </div>
+                            <div class="form-group mb-3">
+                                <label class="form-label">ชื่อ-นามสกุล <span class="text-danger">*</span></label>
+                                <input type="text" id="customer_fullname" name="customer_fullname" class="form-control" placeholder="Enter fullname">
+                            </div>
+                            <div class="form-group mb-3 ">
+                                <label class="form-label">ชื่อเล่น <span class="text-danger">*</span></label>
+                                <input type="text" id="customer_nickname" name="customer_nickname" class="form-control" placeholder="Enter nickname">
+                            </div>
+                            <div class="form-group mb-3 ">
+                                <label class="form-label d-block">เพศ</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="customer_gender" id="customer_gender_male" value="M">
+                                    <label class="form-check-label" for="customer_gender_male">ชาย</label>
                                 </div>
-                                <div class="col-md-3">
-                                    <div class="form-group mb-3 ">
-                                        <label class="form-label">Nick Name</label>
-                                        <input type="text" id="customer_nickname" name="customer_nickname" class="form-control" placeholder="Enter nickname">
-                                    </div>
-                                    <div class="form-group mb-3 ">
-                                        <label class="form-label">Phone</label>
-                                        <input type="tel" id="customer_phone" name="customer_phone" class="form-control" placeholder="Enter Phone Number">
-                                    </div>
-                                    <div class="form-group mb-3 ">
-                                        <label class="form-label">Line</label>
-                                        <input type="text" id="customer_line" name="customer_line" class="form-control" placeholder="Enter Line">
-                                    </div>
-                                    <div class="form-group mb-3 ">
-                                        <label class="form-label">Expectation</label>
-                                        <input type="text" id="course_expectation" name="course_expectation" class="form-control" placeholder="Enter expectation">
-                                    </div>
-                                    <div class="form-group mb-3 ">
-                                        <label class="form-label">Allergic Food</label>
-                                        <input type="text" id="allergic_food" name="allergic_food" class="form-control" placeholder="Enter allergic food">
-                                    </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="customer_gender" id="customer_gender_female" value="F">
+                                    <label class="form-check-label" for="customer_gender_female">หญิง</label>
                                 </div>
-                                <div class="col-md-3">
-                                    <div class="form-group mb-3 ">
-                                        <label class="form-label">Company</label>
-                                        <input type="text" id="customer_company" name="customer_company" class="form-control" placeholder="Enter company">
-                                    </div>
-                                    <div class="form-group mb-3 ">
-                                        <label class="form-label">Email address</label>
-                                        <input type="email" id="customer_email" name="customer_email" class="form-control" placeholder="Enter email">
-                                    </div>
-                                    <div class="form-group mb-3 ">
-                                        <label class="form-label">Gender</label>
-                                        <select id="customer_gender" name="customer_gender" class="form-control">
-                                            <option value="M">Male</option>
-                                            <option value="F">Female</option>
-                                            <option value="O">Other</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group mb-3 ">
-                                        <label class="form-label">Coordinator Name</label>
-                                        <input type="text" id="coordinator_name" name="coordinator_name" class="form-control" placeholder="Enter coordinator">
-                                    </div>
-                                    <div class="form-group mb-3 ">
-                                        <!-- <img id="customer_image" src="<?=WEB_META_BASE_URL?>img/no-image.jpg" class="card-img-top mb-3" style="height: 252px;object-fit: cover;"> -->
-                                        <label class="form-label">Customer Image</label>
-                                        <input type="file" id="customer_image" name="customer_image" accept="image/*"/>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-group mb-3 ">
-                                        <label class="form-label">Position</label>
-                                        <input type="text" id="customer_position" name="customer_position" class="form-control" placeholder="Enter position">
-                                    </div>
-                                    <div class="form-group mb-3 ">
-                                        <label class="form-label">Birthday</label>
-                                        <input type="text" id="customer_birthday" name="customer_birthday" class="form-control" placeholder="Enter birthday">
-                                    </div>
-                                    <div class="form-group mb-3 ">
-                                        <label class="form-label">Shirt Size</label>
-                                        <select id="shirt_id" name="shirt_id" class="form-control">
-                                            <optgroup label="Male">
-                                                <option value="1">S (38" x 27.5")</option>
-                                                <option value="2">M (40" x 28.5")</option>
-                                                <option value="3">L (42" x 29.5")</option>
-                                                <option value="4">XL (44" x 30.5")</option>
-                                                <option value="5">XXL (46" x 31.5")</option>
-                                                <option value="6">3XL (50" x 32.5")</option>
-                                            </optgroup>
-                                            <optgroup label="Female">
-                                                <option value="7">S (32" x 24.5")</option>
-                                                <option value="8">M (34" x 25.5")</option>
-                                                <option value="9">L (36" x 26.5")</option>
-                                                <option value="10">XL (38" x 27.5")</option>
-                                                <option value="11">XXL (40" x 28.5")</option>
-                                            </optgroup>
-                                        </select>
-                                    </div>
-                                    <div class="form-group mb-3 ">
-                                        <label class="form-label">Coordinator Phone</label>
-                                        <input type="tel" id="coordinator_phone" name="coordinator_phone" class="form-control" placeholder="Enter coordinator phone">
-                                    </div>
-                                </div>
+                            </div>
+                            <div class="form-group mb-3 ">
+                                <label class="form-label">เบอร์โทรศัพท์มือถือ <span class="text-danger">*</span></label>
+                                <input type="tel" id="customer_phone" name="customer_phone" class="form-control" placeholder="Enter Phone Number" maxlength="10">
+                            </div>
+                            <div class="form-group mb-3 ">
+                                <label class="form-label">Email <span class="text-danger">*</span></label>
+                                <input type="email" id="customer_email" name="customer_email" class="form-control" placeholder="Enter email">
+                            </div>
+                            <div class="form-group mb-3 ">
+                                <label class="form-label">Facebook</label>
+                                <input type="text" id="customer_facebook" name="customer_facebook" class="form-control" placeholder="Enter facebook">
+                            </div>
+                            <div class="form-group mb-3 ">
+                                <label class="form-label">Line ID <span class="text-danger">*</span></label>
+                                <input type="text" id="customer_line" name="customer_line" class="form-control" placeholder="Enter Line">
+                            </div>
+                            <div class="form-group mb-3 ">
+                                <label class="form-label">วัน/เดือน/ปีเกิด <span class="text-danger">*</span></label>
+                                <input type="text" id="customer_birthday" name="customer_birthday" class="form-control datepicker" placeholder="Enter birthday">
+                            </div>
+                            <div class="form-group mb-3 ">
+                                <label class="form-label">บริษัท <span class="text-danger">*</span></label>
+                                <input type="text" id="customer_company" name="customer_company" class="form-control" placeholder="Enter company">
+                            </div>
+                            <div class="form-group mb-3 ">
+                                <label class="form-label">ตำแหน่ง <span class="text-danger">*</span></label>
+                                <input type="text" id="customer_position" name="customer_position" class="form-control" placeholder="Enter position">
+                            </div>
+                            <div class="form-group mb-3 ">
+                                <label class="form-label">เลขบัตรประจำตัวประชาชน</label>
+                                <input type="tel" id="customer_idcard" name="customer_idcard" class="form-control" placeholder="Enter ID Card" maxlength="13">
+                            </div>
+                            <div class="form-group mb-3 ">
+                                <label class="form-label">ชื่อหลักสูตรที่เคยเรียน</label>
+                                <input type="text" id="course_name_studied" name="course_name_studied" class="form-control" placeholder="Enter course name">
+                            </div>
+                            <div class="form-group mb-3 ">
+                                <label class="form-label">ความคาดหวังจากคอร์สเรียน W-LAP</label>
+                                <input type="text" id="course_expectation" name="course_expectation" class="form-control" placeholder="Enter expectation">
+                            </div>
+                            <div class="form-group mb-3 ">
+                                <label class="form-label">ชื่อผู้ประสานงาน</label>
+                                <input type="text" id="coordinator_name" name="coordinator_name" class="form-control" placeholder="Enter coordinator">
+                            </div>
+                            <div class="form-group mb-3 ">
+                                <label class="form-label">เบอร์โทรผู้ประสานงาน</label>
+                                <input type="tel" id="coordinator_phone" name="coordinator_phone" class="form-control" placeholder="Enter coordinator phone">
+                            </div>
+                            <div class="form-group mb-3 ">
+                                <label class="form-label">ผู้แนะนำ (สามารถใส่หรือไม่ใส่ก็ได้)</label>
+                                <input type="text" id="coordinator_adviser" name="coordinator_adviser" class="form-control" placeholder="Enter coordinator adviser">
+                            </div>
+                            <div class="form-group mb-3 ">
+                                <label class="form-label">แพ้อาหารชนิดใดหรือไม่</label>
+                                <input type="text" id="allergic_food" name="allergic_food" class="form-control" placeholder="Enter allergic food">
+                            </div>
+                            <div class="form-group mb-3 ">
+                                <label class="form-label">ไซส์เสื้อ</label>
+                                <select id="shirt_id" name="shirt_id" class="form-control">
+                                    <option value="" selected> เลือกไซส์ </option>
+                                    <optgroup label="ชาย">
+                                        <option value="1">S (38" x 27.5")</option>
+                                        <option value="2">M (40" x 28.5")</option>
+                                        <option value="3">L (42" x 29.5")</option>
+                                        <option value="4">XL (44" x 30.5")</option>
+                                        <option value="5">XXL (46" x 31.5")</option>
+                                        <option value="6">3XL (50" x 32.5")</option>
+                                    </optgroup>
+                                    <optgroup label="หญิง">
+                                        <option value="7">S (32" x 24.5")</option>
+                                        <option value="8">M (34" x 25.5")</option>
+                                        <option value="9">L (36" x 26.5")</option>
+                                        <option value="10">XL (38" x 27.5")</option>
+                                        <option value="11">XXL (40" x 28.5")</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                            <div class="form-group mb-3 ">
+                                <!-- <img id="customer_image" src="<?=WEB_META_BASE_URL?>img/no-image.jpg" class="card-img-top mb-3" style="height: 252px;object-fit: cover;"> -->
+                                <label class="form-label">อัพโหลดรูปภาพประจำตัว <span class="text-danger">*</span></label>
+                                <input type="file" id="customer_image" name="customer_image" accept="image/*"/>
                             </div>
                             <input type="hidden" id="course_id" name="course_id" value="<?=$get_couser_active[0]->course_no?>">
                         </div>
@@ -917,6 +908,7 @@
         <script src="<?=WEB_META_BASE_URL?>lib/waypoints/waypoints.min.js"></script>
         <script src="<?=WEB_META_BASE_URL?>lib/counterup/counterup.min.js"></script>
         <script src="<?=WEB_META_BASE_URL?>lib/slick/slick.min.js"></script>
+        <script src="<?=WEB_META_BASE_URL?>lib/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
         <!-- Template Javascript -->
         <script src="<?=WEB_META_BASE_URL?>js/main.js"></script>
         <script src="<?=WEB_META_BASE_URL?>js/app.js"></script>

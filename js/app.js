@@ -1,6 +1,16 @@
 $(function() {
+    $('.datepicker').datepicker({
+        format: 'dd/mm/yyyy'
+    });
+
     $('.regis-btn').on('click', function(){
         $('#modal_regis').modal('show');
+    });
+
+    $("#modal_regis").on("hidden.bs.modal", function () {
+        $('#frm_register').find('.is-invalid').removeClass("is-invalid");
+        $('#frm_register').find('.is-valid').removeClass("is-valid");
+        $('#frm_register').find('label.text-danger').remove();
     });
 
     $('#frm_register').validate({
@@ -8,30 +18,36 @@ $(function() {
             customer_fullname: {
                 required: true
             },
-            customer_idcard: {
-                required: true
-            },
-            customer_company: {
-                required: true,
-                email: true
-            },
-            customer_email: {
+            customer_nickname: {
                 required: true
             },
             customer_gender: {
                 required: true
             },
-            customer_image: {
+            customer_phone: {
+                required: true,
+                minlength: 10
+            },
+            customer_email:{
                 required: true
             },
-            customer_position: {
-                required: true
+            customer_line:{
+                required:true
             },
-            customer_birthday: {
-                required: true
+            customer_birthday:{
+                required:true
             },
-            shirt_id: {
-                required: true
+            customer_company:{
+                required:true
+            },
+            customer_position:{
+                required:true
+            },
+            shirt_id:{
+                required:true
+            },
+            customer_image:{
+                required:true
             }
         },
         errorClass: "text-danger",
@@ -45,11 +61,11 @@ $(function() {
         },
         submitHandler: function(form, e) {
             e.preventDefault();
-            var data = new FormData($(form)[0]);
+            var formData = new FormData($(form)[0]);
             $.ajax({
                 type: "post",
-                url: BASE_LANG + "course_register.php",
-                data: data,
+                url: "https://admin.wlapbycmmu.com/en/api/course_register.php",
+                data: formData,
                 cache: false,
                 contentType: false,
                 processData: false,
