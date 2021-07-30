@@ -29,6 +29,7 @@
         <link href="<?=WEB_META_BASE_URL?>lib/lightbox/css/lightbox.min.css" rel="stylesheet">
         <link href="<?=WEB_META_BASE_URL?>lib/slick/slick.css" rel="stylesheet">
         <link href="<?=WEB_META_BASE_URL?>lib/slick/slick-theme.css" rel="stylesheet">
+        <link href="<?=WEB_META_BASE_URL?>lib/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
 
         <!-- font -->
         <link rel="stylesheet" href="<?=WEB_META_BASE_URL?>font/flaticon.css" type="text/css">
@@ -299,27 +300,147 @@
 
                                                 }
                                             ?>
-   
-
                                         </div>
                                     </div>
                                 </div>
                                 <!-- Portfolio End -->
-
                         </div>
                     </div>
                 </div>
             </div>
             <!-- Single Post End-->   
-
-
             <!-- Footer Start -->
             <?php require 'footer.php';?>
             <!-- Footer End -->
-
             <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
         </div>
         <div id="modal_image"></div>
+        <div class="modal modal-blur fade" id="modal_regis" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">W-LAP Register</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="frm_register">
+                            <div class="form-group mb-3">
+                                <label class="form-label">ชื่อ-นามสกุล <span class="text-danger">*</span></label>
+                                <input type="text" id="customer_fullname" name="customer_fullname" class="form-control" placeholder="Enter fullname">
+                            </div>
+                            <div class="form-group mb-3 ">
+                                <label class="form-label">ชื่อเล่น <span class="text-danger">*</span></label>
+                                <input type="text" id="customer_nickname" name="customer_nickname" class="form-control" placeholder="Enter nickname">
+                            </div>
+                            <div class="form-group mb-3 ">
+                                <label class="form-label d-block">เพศ</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="customer_gender" id="customer_gender_male" value="M" checked>
+                                    <label class="form-check-label" for="customer_gender_male">ชาย</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="customer_gender" id="customer_gender_female" value="F">
+                                    <label class="form-check-label" for="customer_gender_female">หญิง</label>
+                                </div>
+                            </div>
+                            <div class="form-group mb-3 ">
+                                <label class="form-label">เบอร์โทรศัพท์มือถือ <span class="text-danger">*</span></label>
+                                <input type="tel" id="customer_phone" name="customer_phone" class="form-control" placeholder="Enter Phone Number" maxlength="10">
+                            </div>
+                            <div class="form-group mb-3 ">
+                                <label class="form-label">Email <span class="text-danger">*</span></label>
+                                <input type="email" id="customer_email" name="customer_email" class="form-control" placeholder="Enter email">
+                            </div>
+                            <div class="form-group mb-3 ">
+                                <label class="form-label">Facebook</label>
+                                <input type="text" id="customer_facebook" name="customer_facebook" class="form-control" placeholder="Enter facebook">
+                            </div>
+                            <div class="form-group mb-3 ">
+                                <label class="form-label">Line ID <span class="text-danger">*</span></label>
+                                <input type="text" id="customer_line" name="customer_line" class="form-control" placeholder="Enter Line">
+                            </div>
+                            <div class="form-group mb-3 ">
+                                <label class="form-label">วัน/เดือน/ปีเกิด <span class="text-danger">*</span></label>
+                                <input type="text" id="customer_birthday" name="customer_birthday" class="form-control datepicker" placeholder="Enter birthday">
+                            </div>
+                            <div class="form-group mb-3 ">
+                                <label class="form-label">บริษัท <span class="text-danger">*</span></label>
+                                <input type="text" id="customer_company" name="customer_company" class="form-control" placeholder="Enter company">
+                            </div>
+                            <div class="form-group mb-3 ">
+                                <label class="form-label">ตำแหน่ง <span class="text-danger">*</span></label>
+                                <input type="text" id="customer_position" name="customer_position" class="form-control" placeholder="Enter position">
+                            </div>
+                            <div class="form-group mb-3 ">
+                                <label class="form-label">เลขบัตรประจำตัวประชาชน</label>
+                                <input type="tel" id="customer_idcard" name="customer_idcard" class="form-control" placeholder="Enter ID Card" maxlength="13">
+                            </div>
+                            <div class="form-group mb-3 ">
+                                <label class="form-label">ชื่อหลักสูตรที่เคยเรียน</label>
+                                <input type="text" id="course_name_studied" name="course_name_studied" class="form-control" placeholder="Enter course name">
+                            </div>
+                            <div class="form-group mb-3 ">
+                                <label class="form-label">ความคาดหวังจากคอร์สเรียน W-LAP</label>
+                                <input type="text" id="course_expectation" name="course_expectation" class="form-control" placeholder="Enter expectation">
+                            </div>
+                            <div class="form-group mb-3 ">
+                                <label class="form-label">ชื่อผู้ประสานงาน</label>
+                                <input type="text" id="coordinator_name" name="coordinator_name" class="form-control" placeholder="Enter coordinator">
+                            </div>
+                            <div class="form-group mb-3 ">
+                                <label class="form-label">เบอร์โทรผู้ประสานงาน</label>
+                                <input type="tel" id="coordinator_phone" name="coordinator_phone" class="form-control" placeholder="Enter coordinator phone">
+                            </div>
+                            <div class="form-group mb-3 ">
+                                <label class="form-label">ผู้แนะนำ (สามารถใส่หรือไม่ใส่ก็ได้)</label>
+                                <input type="text" id="coordinator_adviser" name="coordinator_adviser" class="form-control" placeholder="Enter coordinator adviser">
+                            </div>
+                            <div class="form-group mb-3 ">
+                                <label class="form-label">แพ้อาหารชนิดใดหรือไม่</label>
+                                <input type="text" id="allergic_food" name="allergic_food" class="form-control" placeholder="Enter allergic food">
+                            </div>
+                            <div class="form-group mb-3 ">
+                                <label class="form-label">ไซส์เสื้อ</label>
+                                <select id="shirt_id" name="shirt_id" class="form-control">
+                                    <option value="" selected> เลือกไซส์ </option>
+                                    <optgroup label="ชาย">
+                                        <option value="1">S (38" x 27.5")</option>
+                                        <option value="2">M (40" x 28.5")</option>
+                                        <option value="3">L (42" x 29.5")</option>
+                                        <option value="4">XL (44" x 30.5")</option>
+                                        <option value="5">XXL (46" x 31.5")</option>
+                                        <option value="6">3XL (50" x 32.5")</option>
+                                    </optgroup>
+                                    <optgroup label="หญิง">
+                                        <option value="7">S (32" x 24.5")</option>
+                                        <option value="8">M (34" x 25.5")</option>
+                                        <option value="9">L (36" x 26.5")</option>
+                                        <option value="10">XL (38" x 27.5")</option>
+                                        <option value="11">XXL (40" x 28.5")</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                            <div class="form-group mb-3 ">
+                                <!-- <img id="customer_image" src="<?=WEB_META_BASE_URL?>img/no-image.jpg" class="card-img-top mb-3" style="height: 252px;object-fit: cover;"> -->
+                                <label class="form-label">อัพโหลดรูปภาพประจำตัว <span class="text-danger">*</span></label>
+                                <input type="file" id="customer_image" name="customer_image" class="d-block" accept="image/*"/>
+                            </div>
+                            <input type="hidden" id="course_id" name="course_id" value="<?=$get_couser_active[0]->course_no?>">
+                            <div class="modal-footer pb-0">
+                                <button class="btn btn-link link-secondary" data-dismiss="modal">
+                                    Cancel
+                                </button>
+                                <button type="submit" class="btn btn-primary ms-auto">
+                                    Register
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- JavaScript Libraries -->
         <script src="<?=WEB_META_BASE_URL?>js/jquery-3.6.0.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
@@ -332,6 +453,7 @@
         <script src="<?=WEB_META_BASE_URL?>lib/waypoints/waypoints.min.js"></script>
         <script src="<?=WEB_META_BASE_URL?>lib/counterup/counterup.min.js"></script>
         <script src="<?=WEB_META_BASE_URL?>lib/slick/slick.min.js"></script>
+        <script src="<?=WEB_META_BASE_URL?>lib/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
         <!-- Template Javascript -->
         <script src="<?=WEB_META_BASE_URL?>js/main.js"></script>
         <script src="<?=WEB_META_BASE_URL?>js/app.js"></script>

@@ -770,16 +770,16 @@
             </div>
         </div>
         <div class="modal modal-blur fade" id="modal_regis" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
                 <div class="modal-content">
-                    <form id="frm_register">
-                        <div class="modal-header">
-                            <h5 class="modal-title">W-LAP Register</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
+                    <div class="modal-header">
+                        <h5 class="modal-title">W-LAP Register</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="frm_register">
                             <div class="form-group mb-3">
                                 <label class="form-label">ชื่อ-นามสกุล <span class="text-danger">*</span></label>
                                 <input type="text" id="customer_fullname" name="customer_fullname" class="form-control" placeholder="Enter fullname">
@@ -791,7 +791,7 @@
                             <div class="form-group mb-3 ">
                                 <label class="form-label d-block">เพศ</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="customer_gender" id="customer_gender_male" value="M">
+                                    <input class="form-check-input" type="radio" name="customer_gender" id="customer_gender_male" value="M" checked>
                                     <label class="form-check-label" for="customer_gender_male">ชาย</label>
                                 </div>
                                 <div class="form-check form-check-inline">
@@ -879,19 +879,19 @@
                             <div class="form-group mb-3 ">
                                 <!-- <img id="customer_image" src="<?=WEB_META_BASE_URL?>img/no-image.jpg" class="card-img-top mb-3" style="height: 252px;object-fit: cover;"> -->
                                 <label class="form-label">อัพโหลดรูปภาพประจำตัว <span class="text-danger">*</span></label>
-                                <input type="file" id="customer_image" name="customer_image" accept="image/*"/>
+                                <input type="file" id="customer_image" name="customer_image" class="d-block" accept="image/*"/>
                             </div>
                             <input type="hidden" id="course_id" name="course_id" value="<?=$get_couser_active[0]->course_no?>">
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn btn-link link-secondary" data-dismiss="modal">
-                                Cancel
-                            </button>
-                            <button type="submit" class="btn btn-primary ms-auto">
-                                Register
-                            </button>
-                        </div>
-                    </form>
+                            <div class="modal-footer pb-0">
+                                <button class="btn btn-link link-secondary" data-dismiss="modal">
+                                    Cancel
+                                </button>
+                                <button type="submit" class="btn btn-primary ms-auto">
+                                    Register
+                                </button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
