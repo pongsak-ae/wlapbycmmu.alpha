@@ -32,6 +32,7 @@
         <link href="<?=WEB_META_BASE_URL?>lib/slick/slick.css" rel="stylesheet">
         <link href="<?=WEB_META_BASE_URL?>lib/slick/slick-theme.css" rel="stylesheet">
         <link href="<?=WEB_META_BASE_URL?>lib/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
+        <link href="<?=WEB_META_BASE_URL?>lib/sweetalert2/sweetalert2.min.css" rel="stylesheet">
 
         <!-- font -->
         <link rel="stylesheet" href="font/flaticon.css" type="text/css">
@@ -845,7 +846,7 @@
                             </div>
                             <div class="form-group mb-3 ">
                                 <label class="form-label">เบอร์โทรผู้ประสานงาน</label>
-                                <input type="tel" id="coordinator_phone" name="coordinator_phone" class="form-control" placeholder="Enter coordinator phone">
+                                <input type="tel" id="coordinator_phone" name="coordinator_phone" class="form-control" placeholder="Enter coordinator phone" maxlength="10">
                             </div>
                             <div class="form-group mb-3 ">
                                 <label class="form-label">ผู้แนะนำ (สามารถใส่หรือไม่ใส่ก็ได้)</label>
@@ -909,6 +910,7 @@
         <script src="<?=WEB_META_BASE_URL?>lib/counterup/counterup.min.js"></script>
         <script src="<?=WEB_META_BASE_URL?>lib/slick/slick.min.js"></script>
         <script src="<?=WEB_META_BASE_URL?>lib/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+        <script src="<?=WEB_META_BASE_URL?>lib/sweetalert2/sweetalert2.min.js"></script>
         <!-- Template Javascript -->
         <script src="<?=WEB_META_BASE_URL?>js/main.js"></script>
         <script src="<?=WEB_META_BASE_URL?>js/app.js"></script>

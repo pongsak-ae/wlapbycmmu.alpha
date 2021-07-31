@@ -74,6 +74,17 @@ $(function() {
                     if (res['status'] == true) {
                         $('#modal_regis').modal('hide');
                         $('#frm_register')[0].reset();
+                        Swal.fire(
+                            'Register Success!',
+                            '',
+                            'success'
+                        );
+                    } else {
+                        Swal.fire(
+                            'Oops...',
+                            'Something went wrong!',
+                            'error'
+                        );
                     }
                 }
             });
