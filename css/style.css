@@ -72,6 +72,25 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+/*@supports (-webkit-touch-callout: inherit) {
+    .bg-team {
+        background-attachment: scroll;
+    }
+    .bg-dan {
+        background-attachment: scroll;
+    }
+    .bg-course{
+        background-attachment: scroll;
+    }
+    .bg-title{
+        background-attachment: scroll;
+    }
+    .bg-detail{
+        background-attachment: scroll;
+    }
+}*/
+
 .bg-list-course-1{
     background-image: url(../img/111.jpg) !important;
     background-position: center !important;
