@@ -192,7 +192,7 @@
 
             <!-- Team Start -->
             <div class="team bg-team">
-                <div class="container">
+                <div class="container ss">
                     <div class="section-header text-center pt-5">
                         <h2 class="text-aura">SPEAKERS</h2>
                     </div>
@@ -714,7 +714,7 @@
                 </div>
             </div>
 
-            <div class="testimonial wow fadeIn bg-course pb-0" data-wow-delay="0.1s">
+            <div class="testimonial wow fadeIn bg-team pb-0" data-wow-delay="0.1s">
 
                 <?php
                     $review = "";

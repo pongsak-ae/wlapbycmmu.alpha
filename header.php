@@ -75,7 +75,7 @@
                     <a href="<?=WEB_META_BASE_URL?>course-detail/" class="nav-item nav-link">COURSE DETAIL</a>
                     <a href="#" class="nav-item nav-link">TIMETABLE</a>
                     <!-- <a href="#" class="nav-item nav-link">REGISTER</a> -->
-                    <a href="#" class="nav-item nav-link">CONTACT</a>
+                    <a href="<?=WEB_META_BASE_URL?>contact/" class="nav-item nav-link">CONTACT</a>
                     <a href="<?=WEB_META_BASE_URL?>pdf.pdf" target="blank" class="nav-item nav-link">E-Brochure</a>
                 </div>
                 <div class="ml-auto">

@@ -1,3 +1,6 @@
+.contact-addr{
+    height: 150px;
+}
 
 .th {
   font-family: "Kanit", sans-serif !important;
@@ -15,7 +18,7 @@
 
 .bg-detail{
     background-image: url("../img/wlap-bg-1.jpg");
-    background-position: 100% 100%;
+    /*background-position: 100% 100%;*/
 }
 
 .slide-text{
@@ -55,29 +58,70 @@
     padding-left: 0 !important;
 }
 .bg-dan {
-    position: relative;
+/*    position: relative;
     height: 100%;
-    min-height: 500px;
+    min-height: 500px;*/
     background: linear-gradient(rgba(3, 15, 39, .9), rgba(3, 15, 39, .9)), url(../img/dan7.jpg);
     background-attachment: fixed;
-    background-position: center;
+/*    background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover;*/
 }
 
-.bg-team{
+/*.bg-team{
     background-image: linear-gradient(rgba(46, 41, 154, 0.51), rgba(4, 43, 117, 0.55)), url(../img/bg-team.jpg);
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}*/
+.bg-team{
+    background-image: linear-gradient(rgba(46, 41, 154, 0.51), rgba(4, 43, 117, 0.55)), url(../img/bg-team.jpg);
+    background-attachment: fixed;
+ /* background-position: center;
+    background-repeat: no-repeat;
+   background-size: cover;*/
 }
+@media only screen and (min-width: 768px) {
+  [class*="bg-team"] {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  [class*="bg-dan"] {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+/*  [class*="bg-title"] {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }*/
+  [class*="bg-detail"] {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  [class*="bg-course"] {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  [class*="bg-course"] {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 
-/*@supports (-webkit-touch-callout: inherit) {
-    .bg-team {
-        background-attachment: scroll;
-    }
-    .bg-dan {
+}
+/*@supports (-webkit-touch-callout: inherit) {*/
+
+/*    .bg-team{
+      position: relative;
+      height: 1920px;
+    }*/
+/*    .bg-dan {
         background-attachment: scroll;
     }
     .bg-course{
@@ -88,8 +132,8 @@
     }
     .bg-detail{
         background-attachment: scroll;
-    }
-}*/
+    }*/
+/*}*/
 
 .bg-list-course-1{
     background-image: url(../img/111.jpg) !important;
@@ -104,9 +148,9 @@
 .bg-course{
     background-image: linear-gradient(rgba(46, 41, 154, 0.51), rgba(4, 43, 117, 0.55)), url(../img/bg-team.jpg) !important;
     background-attachment: fixed;
-    background-position: center;
+/*    background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover;*/
 }
 .font-20{
     font-size: 20px !important;
@@ -135,6 +179,9 @@
     color: #fff;
 }
 @media (max-width: 575.98px) { 
+    .contact-addr{
+        height: 150px !important;
+    }
     .gallery-detail{
         max-height: none !important;
         object-fit: cover;
@@ -1342,9 +1389,9 @@ a:focus {
     text-align: center;
     /*background: linear-gradient(rgba(3, 15, 39, .9), rgba(3, 15, 39, .9)), url(../img/carousel-1.jpg);*/
     background-attachment: fixed;
-    background-position: center;
+/*    background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover;*/
 }
 
 .testimonial .container {
