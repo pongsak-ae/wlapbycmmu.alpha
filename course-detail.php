@@ -1,7 +1,8 @@
 <?php
     require 'baseUrl.php';
     $get_couser_active = getdata("https://admin.wlapbycmmu.com/en/api/course.php");
-    $get_couser_detail = getdata("https://admin.wlapbycmmu.com/en/api/course_detail.php");
+    $get_couser_detail = getdata("http://admin.wlapbycmmu.alpha/en/api/course_detail.php");
+    // $get_couser_detail = getdata("https://admin.wlapbycmmu.com/en/api/course_detail.php");
 ?>
 
 <!DOCTYPE html>
@@ -70,19 +71,28 @@
                     <div class="row">
                         <div class="col-lg-8">
                             <div class="single-content wow fadeInUp">
-                                <img src="<?=$get_couser_detail[0]->course_detail->course_schedule?>" />
+                                <!-- <img src="<?=$get_couser_detail[0]->course_detail->course_schedule?>" /> -->
                                 <h2 class="th">รายละเอียดคอร์ส</h2>
                                 <p>
                                     <?=$get_couser_detail[0]->course_detail->course_detail?>
                                 </p>
                             </div>
-
+                            <!-- course_gallery_stage4 -->
 
                             <div class="team">
                                 <h2 class="th">ภาพบรรยากาศ</h2>
-                                <div class="row">
+                
+                               
+                                         
                                     <?php
-                                        foreach ($get_couser_detail[0]->course_gallery as $kgalry => $vgalry) {
+                                        $Stage =1;
+                                        foreach ($get_couser_detail[0]->course_gallery_stage_all as $kgalry => $vgalrystageALL) {
+                                    ?>
+                                    <h3 class="th">Stage <?=$Stage?></h3>
+                                         <div class="row">
+                                    <?php
+                                            $Stage =  $Stage+1;
+                                            foreach ($vgalrystageALL as $kgalry => $vgalry) {
                                     ?>
                                             <div class="col-lg-4 col-md-4 wow fadeInUp" data-wow-delay="0.1s">
                                                 <div class="team-item mb-0">
@@ -96,12 +106,38 @@
                                                     </a>
                                                 </div>
                                             </div>
-                                    <?php
-                                        }
-                                    ?>
-
-                                </div>
+                                        
+                                    <?php } ?>
+                                    </div> 
+                                    <?php } ?>
                             </div>
+
+                            <!-- <div class="team">
+                                <h2 class="th">ภาพบรรยากาศ</h2>
+                
+                                    <?php
+                                     for ($x = 1; $x <= 4; $x++) {
+                                         ?><h3 class="th">Stage <?=$x?></h3><div class="row"><?php
+                                        foreach ($get_couser_detail[0]->course_gallery as $kgalry => $vgalry) {
+                                            if($vgalry->gallery_stage == $x){
+                                    ?>
+                                            <div class="col-lg-4 col-md-4 wow fadeInUp" data-wow-delay="0.1s">
+                                                <div class="team-item mb-0">
+                                                    <a href="<?=$vgalry->gallery_img?>" target="_blank" >
+                                                        <div class="team-img">
+                                                            <img class="gallery-detail" src="<?=$vgalry->gallery_img?>" alt="<?=$vgalry->gallery_alt?>">
+                                                        </div>
+                                                        <div class="text-center">
+                                                            <p class="th"><?=$vgalry->gallery_name?></p>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        
+                                    <?php } } ?>
+                                    </div> 
+                                     <?php } ?>
+                            </div> -->
 
 <!--                             <div class="single-tags wow fadeInUp">
                                 <a href="">National</a>
